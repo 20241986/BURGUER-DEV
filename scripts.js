@@ -7,9 +7,7 @@ const buttonFilterAll = document.querySelector('.filter-all');
 function formatCurrency(value) {
     return value.toLocaleString('pt-BR', {
         style: 'currency',
-        currency: 'BRL'
-    });
-}
+        curren6
 
 function showAll(productsArray) {
     let myLi = '';
