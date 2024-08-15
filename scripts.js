@@ -7,7 +7,10 @@ const buttonFilterAll = document.querySelector('.filter-all');
 function formatCurrency(value) {
     return value.toLocaleString('pt-BR', {
         style: 'currency',
-        curren6
+        currency: 'BRL' 
+    });
+}
+
 
 function showAll(productsArray) {
     let myLi = '';
@@ -21,6 +24,7 @@ function showAll(productsArray) {
         `;
     });
     list.innerHTML = myLi;
+
 }
 
 function mapAllItems() {
@@ -34,7 +38,7 @@ function mapAllItems() {
 function sumAllItems() {
     const totalValue = menuOptions.reduce((acc, curr) => acc + curr.price, 0);
     list.innerHTML = `
-    <li>
+<li>
         <p>O valor total dos itens é ${formatCurrency(totalValue)}</p>
     </li>
 `;
@@ -45,7 +49,8 @@ const filterJustVegan = menuOptions.filter(product => product.vegan);
 showAll(filterJustVegan);
 }
 
-buttonShowAll.addEventListener('click', () => showAll(menuOptions));
+buttonShowAll.addEventListener("click", () => showAll(menuOptions));
 buttonMapAll.addEventListener('click', mapAllItems);
 buttonSumAll.addEventListener('click', sumAllItems);
 buttonFilterAll.addEventListener('click', filterAllItems);
+
